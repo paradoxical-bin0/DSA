@@ -8,9 +8,7 @@ int main()
     {
         cout << arr[i] << " ";
     }
-    yj
-            cout
-        << endl;
+    cout << endl;
     // position of element to delete
     int pos;
     cout << "Enter pos to delete element : ";
