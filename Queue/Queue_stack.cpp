@@ -101,3 +101,9 @@ int main()
 
     return 0;
 }
+/*
+ OUTPUT:
+ Queue:4 6 8
+ The 8 has been removed
+ Queue:4 6
+*/
