@@ -1,21 +1,24 @@
 #include <iostream>
 using namespace std;
-void pattern(string s)
-{
-    int len = s.length();
-    int temp = len;
-    for (int i = 0; i < len; i++)
-    {
-        for (int j = 0; j < temp; j++)
-        {
-            cout << s[j];
-        }
-        temp--;
-        cout << endl;
-    }
-}
 int main()
 {
-    pattern("Geek*");
+    int arr[] = {5, 1, 9, 10, 4, 0};
+    int N = 6;
+    for (int i = 0; i < N - 1; i++)
+    {
+        for (int j = i + 1; j < N; j++)
+        {
+            if (arr[i] > arr[j])
+            {
+                int temp = arr[j];
+                arr[j] = arr[i];
+                arr[i] = temp;
+            }
+        }
+    }
+    for (int i = 0; i < N; i++)
+    {
+        cout << " " << arr[i];
+    }
     return 0;
 }
