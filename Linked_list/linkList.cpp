@@ -19,7 +19,8 @@ int main()
     while (choice)
     {
         // new node_created and newnode pointer is pointing to it
-        newnode = (struct node *)malloc(sizeof(struct node));
+        // newnode = (struct node *)malloc(sizeof(struct node)); // using dynamic allocation
+        newnode = new node;
         cout << "Enter data : ";
         cin >> newnode->data; // set data into new node
         newnode->next = NULL; // set address of next node is == NULL

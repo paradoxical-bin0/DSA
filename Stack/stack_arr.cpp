@@ -1,5 +1,4 @@
 // creating stack data structure
-
 #include <iostream>
 using namespace std;
 #define Max 4
