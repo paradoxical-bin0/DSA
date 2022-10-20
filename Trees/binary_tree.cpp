@@ -13,6 +13,7 @@ public:
     void Inorder(Node *p);
     void Levelorder(Node *p);
     void Height(Node *root);
+    int CountNode(Node *p);
 };
 void Tree::CreatTree()
 {
@@ -99,7 +100,17 @@ void Tree::Levelorder(Node *p)
             q2.enqueue(p->rchild);
         }
     }
-    cout << endl;
+}
+int Tree::CountNode(Node *p)
+{
+    int x, y;
+    if (p)
+    {
+        x = CountNode(p->lchild);
+        y = CountNode(p->rchild);
+        return x + y + 1;
+    }
+    return 0;
 }
 int main()
 {
@@ -109,5 +120,7 @@ int main()
     t.Preorder(t.root);
     cout << "\nPostorder : ";
     t.Levelorder(t.root);
+    cout << "\nThe number of Node's : " << t.CountNode(t.root);
+
     return 0;
 }
