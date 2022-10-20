@@ -91,12 +91,12 @@ void Tree::Levelorder(Node *p)
         p = q2.dequeue();
         if (p->lchild)
         {
-            cout << p->lchild->data;
+            cout << p->lchild->data << " ";
             q2.enqueue(p->lchild);
         }
         if (p->rchild)
         {
-            cout << p->rchild->data;
+            cout << p->rchild->data << " ";
             q2.enqueue(p->rchild);
         }
     }
