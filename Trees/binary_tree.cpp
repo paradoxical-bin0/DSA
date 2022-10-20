@@ -68,6 +68,7 @@ void Tree::Inorder(Node *p)
         cout << p->data << " ";
         Inorder(p->rchild);
     }
+    cout << endl;
 }
 void Tree::Postorder(Node *p)
 {
@@ -77,11 +78,36 @@ void Tree::Postorder(Node *p)
         Postorder(p->rchild);
         cout << p->data << " ";
     }
+    cout << endl;
+}
+void Tree::Levelorder(Node *p)
+{
+    Queue q2(100);
+    cout << p->data;
+    q2.enqueue(p);
+    while (!q2.isEmpty())
+    {
+        p = q2.dequeue();
+        if (p->lchild)
+        {
+            cout << p->lchild->data;
+            q2.enqueue(p->lchild);
+        }
+        if (p->rchild)
+        {
+            cout << p->rchild->data;
+            q2.enqueue(p->rchild);
+        }
+    }
+    cout << endl;
 }
 int main()
 {
     Tree t;
     t.CreatTree();
+    cout << "Preorder : ";
     t.Preorder(t.root);
+    cout << "\nPostorder : ";
+    t.Levelorder(t.root);
     return 0;
 }
